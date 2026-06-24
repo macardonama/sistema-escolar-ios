@@ -25,6 +25,18 @@ struct MainView: View {
                 .frame(maxWidth: .infinity)
                 .background(Color(.systemGray6))
                 .clipShape(RoundedRectangle(cornerRadius: 16))
+                
+                NavigationLink {
+                    DashboardView()
+                } label: {
+                    HStack {
+                        Image(systemName: "newspaper")
+                        Text("Ver dashboard institucional")
+                            .fontWeight(.semibold)
+                    }
+                    .frame(maxWidth: .infinity)
+                }
+                .buttonStyle(.borderedProminent)
 
                 if let estudiante = usuario.estudiante {
                     VStack(alignment: .leading, spacing: 8) {
